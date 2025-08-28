@@ -54,6 +54,8 @@ while (true) {
         console.log("Goodbye!");
         break;
     }
+    try{
+
     if (action === "add") {
         let animal = readlineSync.question("Enter the animal's name: ");
         let fee = Number(readlineSync.question("Enter the adoption fee: "));
@@ -64,6 +66,11 @@ while (true) {
         console.log(`${animal}'s adoption fee is $${getAdoptionFee(animal)}.`);
     } else {
         console.log("Invalid action. Please choose 'add', 'fee', or 'exit'.");
+    }
+    }catch(error){  
+        console.log("error message");
+        console.log(`error: ${error.message}`);
+        console.log(`error $"try again"`);
     }
 }
 
